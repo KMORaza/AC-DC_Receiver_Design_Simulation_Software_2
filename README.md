@@ -1,10 +1,10 @@
-## AC/DC Receiver Design Simulation Software
+# AC/DC Receiver Design Simulation Software
 
 _This software models and simulates an AC/DC receiver system, simulating signal processing, power electronics, and system performance metrics. It integrates components for power factor correction, EMI analysis, harmonic distortion, impedance matching, magnetic core behavior, nonlinear devices, SNR, stability, switching devices, THD, thermal modeling, and waveform generation._
 
 _This software is an enhanced version of another similar software I wrote [previously](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software/tree/main) for AC/DC receiver simulation system in C#._
 
-### Core System Simulation
+## Core System Simulation
 - **Functioning**: Simulates the AC/DC receiver signal path, including AC input, transformer, rectifier, filter, regulator, and modulation (AM, FM, digital, mixed). Generates AC, rectified, and modulated waveforms and updates thermal parameters.
 - **Simulation Logic**: Runs a 0.1-second simulation with a 0.1 ms time step (1000 samples). Processes a 60 Hz AC input through transformation, rectification, filtering, regulation, and modulation stages. Updates thermal model based on power dissipation.
 - **Algorithms and Calculations**:
@@ -38,7 +38,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Thermal: First-order RC model for temperature dynamics.
   - Inductor: Simplified RL circuit for leakage inductance.
 
-### Power Factor Improvement
+## Power Factor Improvement
 - **Functioning**: Computes and corrects power factor (PF) by analyzing voltage and current waveforms, supporting active boost or passive PFC.
 - **Simulation Logic**: Calculates PF from phase difference and distortion factor. Applies user-selected PFC method, adjusting efficiency.
 - **Algorithms and Calculations**:
@@ -65,7 +65,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Spectrum: Computes THD+N across 20 Hz to 20 kHz using band-pass filtering.
 - **Physics Models**: Standard harmonic analysis for nonlinear systems, capturing rectifier and switching distortion.
 
-### Impedance Analysis
+## Impedance Analysis
 - **Functioning**: Analyzes impedance matching between source and load, computing reflection coefficient, VSWR, return loss, and Smith chart data.
 - **Simulation Logic**: Models source/load impedances with resistive and reactive components. Computes metrics over 10 Hz to 100 MHz.
 - **Algorithms and Calculations**:
@@ -75,7 +75,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Impedance: Z_in = Z_S + j * 2 * pi * f * L, Z_out = Z_L.
 - **Physics Models**: RF impedance matching model with complex impedance and transmission line theory.
 
-### Magnetic Core Behavior
+## Magnetic Core Behavior
 - **Functioning**: Simulates magnetic core behavior (H-field, B-field, magnetization, saturation) using a simplified Jiles-Atherton model.
 - **Simulation Logic**: Models fields for Ferrite, Iron Powder, or Silicon Steel based on input current and frequency. Tracks hysteresis loop for B-H curve.
 - **Algorithms and Calculations**:
@@ -85,7 +85,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Saturation: Clamps B at material limits (e.g., 0.4 T for Ferrite).
 - **Physics Models**: Simplified Jiles-Atherton model for magnetic hysteresis and saturation.
 
-### Diode and Transistor Modeling
+## Diode and Transistor Modeling
 - **Functioning**: Models nonlinear behavior of diodes and transistors for rectification and switching.
 - **Simulation Logic**: Computes diode current from voltage and transistor collector current in active region.
 - **Algorithms and Calculations**:
@@ -102,7 +102,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - SNR Spectrum: SNR_f = 10 * log10(P_signal,f / P_noise,f) per frequency band.
 - **Physics Models**: Signal processing model with additive white Gaussian noise.
 
-### System Stability Analysis
+## System Stability Analysis
 - **Functioning**: Analyzes stability using Bode, Nyquist, and root locus plots for filter and regulator transfer functions.
 - **Simulation Logic**: Constructs transfer functions for capacitive, inductive, or active filters. Updates plots for 1 Hz to 100 kHz.
 - **Algorithms and Calculations**:
@@ -115,7 +115,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Root Locus: Plots pole trajectories for gains 0 to 100.
 - **Physics Models**: Linear control theory for small-signal dynamics.
 
-### Switching Device Behavior
+## Switching Device Behavior
 - **Functioning**: Models transient and steady-state behavior of MOSFET, IGBT, GaN, or SiC devices in a buck converter setup.
 - **Simulation Logic**: Simulates gate voltage, drain-source voltage, and power loss over 1 ms. Computes losses, efficiency, and junction temperature.
 - **Algorithms and Calculations**:
@@ -130,7 +130,7 @@ _This software is an enhanced version of another similar software I wrote [previ
     - Junction Temperature: T_j = T_amb + P_total * R_thJA.
 - **Physics Models**: Switching model with RC gate dynamics and linear transients. Steady-state thermal model.
 
-### Total Harmonic Distortion Analysis
+## Total Harmonic Distortion Analysis
 - **Functioning**: Computes THD and harmonic amplitudes (H2-H10) for modulated signal, plus THD across 100 Hz to 10 kHz.
 - **Simulation Logic**: Uses FFT to extract fundamental and harmonics. Analyzes THD in frequency bands.
 - **Algorithms and Calculations**:
@@ -139,7 +139,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - THD vs. Frequency: THD_f = sqrt(sum(H_n,f^2)) / H_1,f * 100 per band.
 - **Physics Models**: Fourier-based distortion analysis for nonlinear systems.
 
-### Component Thermal Analysis
+## Component Thermal Analysis
 - **Functioning**: Simulates thermal behavior of diode, MOSFET, and system, accounting for power dissipation and thermal coupling.
 - **Simulation Logic**: Computes power from receiver waveforms. Updates temperatures using RC thermal model over 0.1-second window.
 - **Algorithms and Calculations**:
@@ -153,13 +153,13 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Thermal Coupling: k = 0.2 for heat transfer between components.
 - **Physics Models**: First-order RC thermal model with thermal resistance and capacitance.
 
-### Signal Waveform Generation
+## Signal Waveform Generation
 - **Functioning**: Generates AC, rectified, and modulated waveforms for analysis.
 - **Simulation Logic**: Calls ReceiverModel.generate_waveform for 0.01-second signals. Supports analog, digital, or mixed modes.
 - **Algorithms and Calculations**: Relies on ReceiverModel for waveform generation.
 - **Physics Models**: Uses ReceiverModel physics for signal generation.
 
-### System Integration and Simulation Loop
+## System Integration and Simulation Loop
 - **Functioning**: Integrates all components (ReceiverModel, analyzers) into a cohesive simulation with real-time updates.
 - **Simulation Logic**: Runs a 50 ms update loop, generating waveforms and updating analyzers. Supports transient, steady-state, and frequency modes. Injects noise for SNR analysis.
 - **Algorithms and Calculations**:
@@ -168,3 +168,9 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Analyzer Updates: Calls HarmonicAnalyzer, PowerFactorCorrection, SNRAnalyzer, THDAnalyzer, EMIAnalyzer, ThermalAnalyzer, and StabilityAnalyzer for respective metrics.
 - **Physics Models**: Orchestrates all component physics models for synchronized simulation.
 
+---
+
+| ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(1).png) | ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(2).png) | ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(3).png) | ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(4).png) |
+|-------|-------|-------|-------|
+| ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(5).png) | ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(6).png) | ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(7).png) | ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(8).png) |
+| ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(9).png) | ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(10).png) | ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(11).png) | ![](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software_2/blob/main/AC-DC%20Reciever%20Design%20Simulation%20Software/screenshots/screenshot%20(12).png) |
