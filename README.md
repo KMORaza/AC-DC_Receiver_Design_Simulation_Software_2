@@ -1,8 +1,8 @@
 ## AC/DC Receiver Design Simulation Software
 
-This software models and simulates an AC/DC receiver system, simulating signal processing, power electronics, and system performance metrics. It integrates components for power factor correction, EMI analysis, harmonic distortion, impedance matching, magnetic core behavior, nonlinear devices, SNR, stability, switching devices, THD, thermal modeling, and waveform generation. 
+_This software models and simulates an AC/DC receiver system, simulating signal processing, power electronics, and system performance metrics. It integrates components for power factor correction, EMI analysis, harmonic distortion, impedance matching, magnetic core behavior, nonlinear devices, SNR, stability, switching devices, THD, thermal modeling, and waveform generation._
 
-This software is an enhanced version of another similar software I wrote previously for AC/DC receiver simulation system in C#.
+_This software is an enhanced version of another similar software I wrote [previously](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software/tree/main) for AC/DC receiver simulation system in C#._
 
 ### Core System Simulation
 - **Functioning**: Simulates the AC/DC receiver signal path, including AC input, transformer, rectifier, filter, regulator, and modulation (AM, FM, digital, mixed). Generates AC, rectified, and modulated waveforms and updates thermal parameters.
