@@ -1,6 +1,6 @@
 # AC/DC Receiver Design Simulation Software
 
-_This software models and simulates an AC/DC receiver system, simulating signal processing, power electronics, and system performance metrics. It integrates components for power factor correction, EMI analysis, harmonic distortion, impedance matching, magnetic core behavior, nonlinear devices, SNR, stability, switching devices, THD, thermal modeling, and waveform generation._
+This software models and simulates an AC/DC receiver system, simulating signal processing, power electronics, and system performance metrics. It integrates components for power factor correction, EMI analysis, harmonic distortion, impedance matching, magnetic core behavior, nonlinear devices, SNR, stability, switching devices, THD, thermal modeling, and waveform generation.
 
 _This software is an enhanced version of another similar software I wrote [previously](https://github.com/KMORaza/AC-DC_Receiver_Design_Simulation_Software/tree/main) for AC/DC receiver simulation system in C#._
 
@@ -47,7 +47,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Passive PFC: Applies PF = 0.9, reduces efficiency by 1% (eta = 0.99 * eta).
 - **Physics Models**: Models PF as displacement and distortion factors, typical in power electronics.
 
-### Electromagnetic Interference (EMI) Analysis
+## Electromagnetic Interference (EMI) Analysis
 - **Functioning**: Analyzes conducted and radiated EMI, comparing against CISPR 22 Class B limits.
 - **Simulation Logic**: Computes EMI spectrum from signal (150 kHz to 1 GHz). Applies EMI filter if enabled, reducing EMI levels.
 - **Algorithms and Calculations**:
@@ -93,7 +93,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Transistor: I_C = 100 * I_B, clipped at V_CE = 0.2 V.
 - **Physics Models**: Standard semiconductor models for diodes and BJTs.
 
-### Signal-to-Noise Ratio Analysis
+## Signal-to-Noise Ratio Analysis
 - **Functioning**: Computes overall SNR, noise floor, and SNR spectrum (20 Hz to 20 kHz).
 - **Simulation Logic**: Adds Gaussian noise to signal and computes power ratios. Analyzes SNR in frequency bands via FFT.
 - **Algorithms and Calculations**:
