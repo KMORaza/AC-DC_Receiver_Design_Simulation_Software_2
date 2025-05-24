@@ -56,7 +56,7 @@ _This software is an enhanced version of another similar software I wrote [previ
   - Compliance: Compares EMI to CISPR 22 limits (e.g., 66-56 dBuV for 150-500 kHz).
 - **Physics Models**: Simplified EMI model based on Fourier transform of switching transients, with filter as a frequency-dependent attenuator.
 
-### Harmonic Distortion Analysis
+## Harmonic Distortion Analysis
 - **Functioning**: Computes total harmonic distortion plus noise (THD+N) and harmonic spectra (H2-H10), with CSV export.
 - **Simulation Logic**: Analyzes modulated signal via FFT for THD+N and harmonic amplitudes. Supports logarithmic scaling.
 - **Algorithms and Calculations**:
